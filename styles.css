@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ion-icon{
+    color: white;
+    font-size: 100px;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid red;
+}
+.welcome-page, .add-task{
+    height: 100%;
+    width: 100%;
+}
+.add-streak{
+    display: flex;
+    align-items: center;
+}
+.welcome-message{
+    color: white;
+    display: flex;
+    align-items: center;
+    
+}
+.top-page{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 55%;
+    padding: 1rem;
+    background-color: #FF7B54;
+
+}
+.bottom-page{
+    text-align: center;
+}
+/* .welcome-page{
+    display: none;
+} */
+  /* visibility: hidden; */
+.add-task{
+    display: none;
+}
+.watch{
+    display: flex;
+    align-items: flex-end;
+    z-index: 10000;
+}
+.watch img{
+    height: 150px;
+    width: 100px;
+}
+/* .phone{
+
+} */
+
+form{
+    border: 5px solid white;
+    background-color: white;
+    height: 100%;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* margin-left: -5rem; */
+}
+form > h4{
+    background-color: #FF7B54;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    
+}
+#name, #image, #date{
+    height: 3rem;
+    /* border-radius: 4px; */
+}
+label{
+    color: #FF7B54;
+}
+
+#add-btn{
+    border: none;
+    width: 100%;
+    height: 3rem;
+    text-align: center;
+    color: white;
+    background-color: #FF7B54;
+}
+.todo > p{
+    color: white;
+}
+.phone{
+    border: 10px solid black;
+    height: 100%;
+    width: 18rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+    color: white;
+    margin-left: -20rem;
+}
+.phone ion-icon{
+    font-size: 50px;
+
+}
+.row-1, .row-2, .row-3{
+    display: flex;
+    gap: 5rem;
+    
+}
