@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@100;200&family=Roboto&family=Sacramento&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Merriweather', serif;
 }
 ion-icon{
     color: white;
@@ -24,6 +26,7 @@ ion-icon{
     color: white;
     display: flex;
     align-items: center;
+    font-size: xx-large;
     
 }
 .top-page{
@@ -38,13 +41,13 @@ ion-icon{
 .bottom-page{
     text-align: center;
 }
-/* .welcome-page{
-    display: none;
-} */
-  /* visibility: hidden; */
-.add-task{
+.welcome-page{
     display: none;
 }
+  /* visibility: hidden; */
+/* .add-task{
+    display: none;
+} */
 .watch{
     display: flex;
     align-items: flex-end;
@@ -54,10 +57,6 @@ ion-icon{
     height: 150px;
     width: 100px;
 }
-/* .phone{
-
-} */
-
 form{
     border: 5px solid white;
     background-color: white;
@@ -95,7 +94,46 @@ label{
     color: white;
 }
 
-.iphone{
-    height: 100px;
-    width: 50px;
+.iphone img{
+    height:20rem;
+    width: 13rem;
 }
+.pop-up{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: aliceblue;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    width: 30rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    display: none;
+}
+.pop-up.pop-up-active{
+    transform: translate(-50%,-50%) scale(1);
+}
+.pop-up-icon ion-icon{
+    font-size: 7rem;
+    color: #39B5E0;
+}
+.close-btn, .delete-btn{
+    border: none;
+    height: 3rem;
+    width: 6rem;
+    color: white;
+    cursor: pointer;
+}
+.close-btn{
+    background-color: red;
+}
+.delete-btn{
+    background-color: gray;
+}
+/* .pop-up-buttons{
+    
+} */
