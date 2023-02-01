@@ -12,13 +12,13 @@ ion-icon{
 .container{
     width: 100vw;
     height: 100vh;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .welcome-page, .add-task{
     height: 100%;
     width: 100%;
 }
-.add-streak{
+.add-streak, .close-window{
     display: flex;
     align-items: center;
 }
@@ -41,13 +41,17 @@ ion-icon{
 .bottom-page{
     text-align: center;
 }
-.welcome-page{
-    display: none;
-}
-  /* visibility: hidden; */
-/* .add-task{
+/* .welcome-page{
     display: none;
 } */
+  /* visibility: hidden; */
+.not-active{
+    display: none;
+}
+.close-button, #add-streak{
+    background-color: #FF7B54;
+    border: none;
+}
 .watch{
     display: flex;
     align-items: flex-end;

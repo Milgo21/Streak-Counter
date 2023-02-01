@@ -12,7 +12,9 @@
         <div class="welcome-page">
             <div class="top-page">
                     <div class="add-streak">
+                        <button id="add-streak">
                     <ion-icon id="add-icon" name="add-circle-outline"></ion-icon>
+                        </button>
                     </div>
                     <div class="iphone">
                         <img src="./images/streakwatch.png" alt="Oooops" srcset="">
@@ -25,20 +27,19 @@
                 <p>We dont have any activities</p>
             </div>
         </div>
-        <div class="add-task">
+        <div class="add-task not-active">
             <div class="top-page">
-                <div class="add-streak">
+                <div class="close-window">
+                    <button class="close-button">
                     <ion-icon name="close-circle-outline"></ion-icon>
+                    </button>
                 </div>
-                <!-- <div class="watch">
-                    <img src="./images/apple-watch.png" alt="">
-                </div> -->
                 <div class="todo">
                     <ion-icon name="list-outline"></ion-icon><br>
                     <p>Add a Todo Here</p>
                 </div>
                 <div class="add-task-form">
-                    <form action="">
+                    <form>
                         <h4>Please Add A Task</h4>
                         <label for="name">Task Name</label><br>
                         <input type="text" id="name"><br>
@@ -82,6 +83,3 @@
     <script src="./dist/streak.js"></script>
 </body>
 </html>
-
-
-
