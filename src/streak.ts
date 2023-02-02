@@ -1,5 +1,4 @@
-
-
+import {StreakClass} from "./classes/StreakClass.js";
 
 // div elements
 const welcomePage = document.querySelector(".welcome-page") as HTMLDivElement;
@@ -15,14 +14,24 @@ const popUpDelete = document.querySelector(".delete-btn") as HTMLButtonElement;
 // Form button
 const formButton = document.getElementById("add-btn") as HTMLButtonElement;
 // Form Div
-const form = document.querySelector('form') as HTMLFormElement;
+// const form = document.querySelector('form') as HTMLFormElement;
 
 // Form Input
 const taskName = document.getElementById("name") as HTMLInputElement;
 const urlname = document.getElementById("image") as HTMLInputElement;
 const streakDate = document.getElementById("date") as HTMLInputElement;
+// Bottom page
+// const bottomText = document.querySelector('.bottom-text') as HTMLParagraphElement;
+// const bottomIcon = document.querySelector('.activity-icon') as HTMLDivElement;
+// const bottomDate = document.querySelector('.activity-date') as HTMLDivElement;
+const popupdiv = document.querySelector('.activity-display') as HTMLDivElement;
+// const bottomdesc = document.querySelector('.activity-title') as HTMLDivElement;
+
+// ----------new Streak Object
+const thisStreak = new StreakClass();
 
 
+// plus page+
 addButton.addEventListener('click',()=>{
     const list = welcomePage.classList
     list.add('not-active');
@@ -36,13 +45,16 @@ closeButton.addEventListener('click',()=>{
     const addTaskList = addTask.classList;
     addTaskList.add('not-active');  
 });
-
-
+// Open popup
+if(popupdiv){
+    popupdiv.addEventListener('click', function() {
+    thisStreak.openTask(popUp);
+    });
+}
 // Remove pop-up
-popUpClose.addEventListener('click',()=>{
-    const list = popUp.classList;
-    list.remove('pop-up-active')
-});
+// popUpClose.addEventListener('click',()=>{
+//     thisStreak.closeTask(popUp);
+// });
 popUpDelete.addEventListener('click',()=>{
     const list = popUp.classList;
     list.remove('pop-up-active')
@@ -53,21 +65,10 @@ formButton.addEventListener('click' , (event)=>{
     const title = taskName.value;
     const link = urlname.value;
     const date = streakDate.value;
-    if(title==`` || link == ``|| date==``){
-        const p = document.createElement('p')
-        p.textContent='Please fill in all Fields'
-        p.style.color='red'
-        p.id='error-message'
-        form.insertAdjacentElement('afterbegin', p)
-
-        setTimeout(()=>{
-            p.style.display='none'
-        },4000)
-    }else{
-        console.log(3);
-        
-    }
+    thisStreak.addTask(title, link, date);
 })
+
+
 
 
 

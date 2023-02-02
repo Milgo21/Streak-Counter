@@ -1,15 +1,9 @@
 
-interface task{
-    streakname:string;
+interface Task{
+    id:Number;
+    name: string;
     taskimage:string;
     date:string;
 }
 
-interface showStreak{
-    image:string;
-    date:string;
-    streakname:string;
-    days:number;
-}
-
-export default task
+export default Task;
