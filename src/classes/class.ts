@@ -1,14 +1,17 @@
-// import {task} from '../interfaces/interface.js';
+// import task from '../interfaces/interface.ts';
 
-// Class streak implements task{
+// Class streakClass{
     
+//     streakname:string;
+//     taskimage:string;
+//     date:string;
 
-//     constructor(
-//         private streakname:string;
-//         private image:string;
-//         date:string;
-//     ){}
-
+//     constructor(streakname:string, taskimage:string, date:string){
+//         this.streakname=streakname
+//         this.taskimage=taskimage
+//         this.date=date
+//     }
 
 
 // }
+// export default streakClass;

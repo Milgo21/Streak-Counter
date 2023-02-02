@@ -1,13 +1,15 @@
 
-export interface task{
+interface task{
     streakname:string;
-    image:string;
+    taskimage:string;
     date:string;
 }
 
-export interface showStreak{
+interface showStreak{
     image:string;
     date:string;
     streakname:string;
     days:number;
 }
+
+export default task
