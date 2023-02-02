@@ -114,8 +114,8 @@ export class StreakClass{
             card?.addEventListener('click', () => {
                 const popUp = document.querySelector(".pop-up") as HTMLDivElement;
                 // this.openTask(popUp);
-                const list = popUp.classList;
-                list.add('pop-up-active');
+                      const list = popUp.classList;
+        list.add('pop-up-active');
             })
              // const popupdivr = document.querySelector('.activity-display') as HTMLDivElement;
             //  popupdiv.addEventListener('click', function() {
@@ -126,3 +126,10 @@ export class StreakClass{
 
 }
 // export default StreakClass;
+// popUpClose.addEventListener('click',()=>{
+//     thisStreak.closeTask(popUp);
+// });
+// popUpDelete.addEventListener('click',()=>{
+//     const list = popUp.classList;
+//     list.remove('pop-up-active')
+// });
