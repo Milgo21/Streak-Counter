@@ -24,7 +24,9 @@ const streakDate = document.getElementById("date") as HTMLInputElement;
 // const bottomText = document.querySelector('.bottom-text') as HTMLParagraphElement;
 // const bottomIcon = document.querySelector('.activity-icon') as HTMLDivElement;
 // const bottomDate = document.querySelector('.activity-date') as HTMLDivElement;
-const popupdiv = document.querySelector('.activity-display') as HTMLDivElement;
+// const popupdiv = document.querySelector('.activity-display') as HTMLDivElement;
+const popupdiv = document.querySelector('.bottom-page2') as HTMLDivElement;
+
 // const bottomdesc = document.querySelector('.activity-title') as HTMLDivElement;
 
 // ----------new Streak Object
@@ -46,15 +48,20 @@ closeButton.addEventListener('click',()=>{
     addTaskList.add('not-active');  
 });
 // Open popup
-if(popupdiv){
-    popupdiv.addEventListener('click', function() {
-    thisStreak.openTask(popUp);
+popupdiv.addEventListener('click', function(e: Event) {
+    // console.log(e.target);
+    
+// const hello = document.querySelector('.activity-display') as HTMLDivElement;
+// if(hello){
+    thisStreak.openTask(popUp, e.target)
+    
+// }
+
     });
-}
 // Remove pop-up
-// popUpClose.addEventListener('click',()=>{
-//     thisStreak.closeTask(popUp);
-// });
+popUpClose.addEventListener('click',()=>{
+    thisStreak.closeTask(popUp);
+});
 popUpDelete.addEventListener('click',()=>{
     const list = popUp.classList;
     list.remove('pop-up-active')

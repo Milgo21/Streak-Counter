@@ -29,7 +29,7 @@ export class StreakClass{
         const form = document.querySelector('form') as HTMLFormElement;
         const bottomText = document.querySelector('.bottom-text') as HTMLParagraphElement;
         if(this.validateForm(title, link, date)){
-            const newTask: Task = {id: Math.random(), name: title, taskimage: `<ion-icon name=${link}></ion-icon>`, date: date };
+            const newTask: Task = {id: Math.random(), name: title, taskimage: `<ion-icon name="${link}"></ion-icon>`, date: date };
             this.tasks = [...this.tasks,newTask];
             // this.tasks.push(newTask);
             bottomText.innerText=`Activities`;
@@ -76,7 +76,6 @@ export class StreakClass{
             popupdiv.appendChild(bottomIcon);
             popupdiv.appendChild(bottomDate);
             popupdiv.appendChild(bottomdesc);
-            console.log(popupdiv);
 
             containerDiv.append(popupdiv);
 
@@ -99,7 +98,35 @@ export class StreakClass{
 
     }
 
-    public openTask(popUp: any): void{
+    public openTask(popUp: any, target: any): void{
+        const id = target.id;
+        // Look for our current element in the list of tasks using id
+        const currTask = this.tasks.filter(task => task.id.toString() === id)[0];
+
+    const date  = document.querySelector(".pop-up-date");
+    const title  = document.querySelector(".pop-up-title");
+    const days  = document.querySelector(".pop-up-days");
+    const icon  = document.querySelector(".pop-icon-par");
+
+    if(date){
+        date.innerHTML = currTask.date;
+    }
+    
+    if(title){
+        title.innerHTML = currTask.name;
+    }
+    
+    if(days){
+        const noOfDays = this.calculateDays(currTask.date);
+        days.innerHTML = `${noOfDays} days`;
+    }
+    
+    if(icon){
+        icon.innerHTML = currTask.taskimage;
+    }
+
+
+        
         const list = popUp.classList;
         list.add('pop-up-active');
     }
@@ -122,6 +149,11 @@ export class StreakClass{
             //     this.openTask(popUp);
             // });
         })
+    }
+    private calculateDays(date: string): Number{
+        let span: any = Math.abs(new Date(date).getTime() - new Date().getTime());
+        return Math.ceil(span / (1000 * 3600 * 24));;
+        // let span = Math.round(Number((new Date(date) - new Date()) / (1000 * 60 * 60 * 24)));
     }
 
 }
