@@ -3,21 +3,10 @@
 import Task from "../interfaces/interface";
 
 export class StreakClass{
-    
-    // streakname:string;
-    // taskimage:string;
-    // date:string;
-    // currElement: HTMLAllCollection;
     public tasks:Task [];
     constructor(){
         this.tasks = [];
     }
-
-    // constructor(streakname:string, taskimage:string, date:string){
-    //     this.streakname=streakname
-    //     this.taskimage=taskimage
-    //     this.date=date
-    // }
     public openStreakModal(): void{
 
     }
@@ -29,8 +18,11 @@ export class StreakClass{
         const form = document.querySelector('form') as HTMLFormElement;
         const bottomText = document.querySelector('.bottom-text') as HTMLParagraphElement;
         if(this.validateForm(title, link, date)){
-            const newTask: Task = {id: Math.random(), name: title, taskimage: `<ion-icon name="${link}"></ion-icon>`, date: date };
-            this.tasks = [...this.tasks,newTask];
+            const newTask: Task = {id: Math.random(),
+                                    name: title, 
+                                    taskimage: `<ion-icon name="${link}"></ion-icon>`, 
+                                    date: date };
+                                    this.tasks = [...this.tasks,newTask];
             // this.tasks.push(newTask);
             bottomText.innerText=`Activities`;
             this.displayTasks(newTask);
@@ -94,7 +86,10 @@ export class StreakClass{
         return true;
     }
 
-    public deleteTask(id: string): void{
+    public deleteTask(newTask:Task): void{
+        // let array = this.tasks;
+        // array.splice(index, 1);
+        // var index = array.indexOf(e.target.value);
 
     }
 
@@ -103,10 +98,10 @@ export class StreakClass{
         // Look for our current element in the list of tasks using id
         const currTask = this.tasks.filter(task => task.id.toString() === id)[0];
 
-    const date  = document.querySelector(".pop-up-date");
-    const title  = document.querySelector(".pop-up-title");
-    const days  = document.querySelector(".pop-up-days");
-    const icon  = document.querySelector(".pop-icon-par");
+        const date  = document.querySelector(".pop-up-date");
+        const title  = document.querySelector(".pop-up-title");
+        const days  = document.querySelector(".pop-up-days");
+        const icon  = document.querySelector(".pop-icon-par");
 
     if(date){
         date.innerHTML = currTask.date;
@@ -124,9 +119,6 @@ export class StreakClass{
     if(icon){
         icon.innerHTML = currTask.taskimage;
     }
-
-
-        
         const list = popUp.classList;
         list.add('pop-up-active');
     }
@@ -141,27 +133,14 @@ export class StreakClass{
             card?.addEventListener('click', () => {
                 const popUp = document.querySelector(".pop-up") as HTMLDivElement;
                 // this.openTask(popUp);
-                      const list = popUp.classList;
-        list.add('pop-up-active');
+                    const list = popUp.classList;
+                    list.add('pop-up-active');
             })
-             // const popupdivr = document.querySelector('.activity-display') as HTMLDivElement;
-            //  popupdiv.addEventListener('click', function() {
-            //     this.openTask(popUp);
-            // });
         })
     }
     private calculateDays(date: string): Number{
         let span: any = Math.abs(new Date(date).getTime() - new Date().getTime());
         return Math.ceil(span / (1000 * 3600 * 24));;
-        // let span = Math.round(Number((new Date(date) - new Date()) / (1000 * 60 * 60 * 24)));
+        
     }
-
 }
-// export default StreakClass;
-// popUpClose.addEventListener('click',()=>{
-//     thisStreak.closeTask(popUp);
-// });
-// popUpDelete.addEventListener('click',()=>{
-//     const list = popUp.classList;
-//     list.remove('pop-up-active')
-// });

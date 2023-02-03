@@ -63,8 +63,9 @@ popUpClose.addEventListener('click',()=>{
     thisStreak.closeTask(popUp);
 });
 popUpDelete.addEventListener('click',()=>{
-    const list = popUp.classList;
-    list.remove('pop-up-active')
+    // const list = popUp.classList;
+    // list.remove('pop-up-active')
+    console.log('diliti');
 });
 
 formButton.addEventListener('click' , (event)=>{
